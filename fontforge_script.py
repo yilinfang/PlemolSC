@@ -49,8 +49,8 @@ Copyright 2018 Source Foundry Authors https://github.com/source-foundry/Hack
 [Nerd Fonts]
 Copyright (c) 2014, Ryan L McIntyre https://ryanlmcintyre.com
 
-[PlemolJP]
-Copyright (c) 2021, Yuko Otawara
+[PlemolSC]
+Copyright (c) 2025, Yilin Fang
 """  # noqa: E501
 
 options = {}
@@ -327,7 +327,8 @@ def open_fonts(jp_style: str, eng_style: str):
 def adjust_some_glyph(jp_font, eng_font, style="Regular"):
     """いくつかのグリフ形状に調整を加える"""
     eng_glyph_width = eng_font[0x0020].width
-    full_width = jp_font[0x3042].width
+    # full_width = jp_font[0x3042].width
+    full_width = jp_font[0x3000].width  # HACK: replace with Ideographic Space
     if options.get("35"):
         half_width = eng_glyph_width
     else:
@@ -673,10 +674,11 @@ def set_width_600_or_1000(jp_font):
             glyph.transform(psMat.translate((600 - glyph.width) / 2, 0))
             glyph.width = 600
 
+        # HACK: No need in Simplified Chinese
         # なぜか標準の幅ではないグリフの個別調整
-        if glyph.unicode == 0x51F0:
-            glyph.transform(psMat.translate((1000 - glyph.width) / 2, 0))
-            glyph.width = 1000
+        # if glyph.unicode == 0x51F0:
+        #     glyph.transform(psMat.translate((1000 - glyph.width) / 2, 0))
+        #     glyph.width = 1000
         if glyph.glyphname == "perthousand.full":
             glyph.width = 1000
 

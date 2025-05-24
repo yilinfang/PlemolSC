@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  fontbuilder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # Mount the local ./build directory to /app/build in the container
+    # This is where the final fonts will appear.
+    volumes:
+      - ./build:/app/build
