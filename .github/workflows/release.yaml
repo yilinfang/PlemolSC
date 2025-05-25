@@ -140,7 +140,8 @@ jobs:
           body: |
             Automated release of PlemolSC font variants.
             Built from commit ${{ github.sha }}.
-            For the detail of each variant, please refer to initial [README](https://github.com/yilinfang/PlemolSC/blob/main/README_PlemolJP.md) of PlemolJP.
+            For the detail of the base fonts used, please refer to [Release Notes](https://github.com/yilinfang/PlemolSC/blob/main/RELEASE_NOTES.md).
+            For the detail of each variant, please refer to initial [README](https://github.com/yilinfang/PlemolSC/blob/main/README_PlemolJP.md) of [PlemolJP](https://github.com/yuru7/PlemolJP).
           files: ${{ steps.prep_artifacts.outputs.ARTIFACT_PATH }}/*.zip
           draft: false
           prerelease: ${{ steps.version_info.outputs.IS_PRERELEASE }}

@@ -9,7 +9,9 @@ The build scripts are from [PlemolJP](https://github.com/yuru7/PlemolJP).
 I made some changes which are commented with `HACK` in the scripts.
 
 For more detail about the building process and the information of each variant,
-please refer to the initial [README](/README_PlemolJP.md) of [PlemolJP](https://github.com/yuru7/PlemolJP).
+please refer to the initial [README](README_PlemolJP.md) of [PlemolJP](https://github.com/yuru7/PlemolJP).
+
+For the information of the base fonts used in PlemolSC, please refer to [Release Notes](RELEASE_NOTES.md).
 
 ## Usage
 
