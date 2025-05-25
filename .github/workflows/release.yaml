@@ -139,8 +139,8 @@ jobs:
           name: ${{ steps.version_info.outputs.RELEASE_NAME }}
           body: |
             Automated release of PlemolSC font variants.
-            Each ZIP file contains a specific variant of the PlemolSC font family (files are at the root of the ZIP).
             Built from commit ${{ github.sha }}.
+            For the detail of each variant, please refer to initial [README](https://github.com/yilinfang/PlemolSC/blob/main/README_PlemolJP.md) of PlemolJP.
           files: ${{ steps.prep_artifacts.outputs.ARTIFACT_PATH }}/*.zip
           draft: false
           prerelease: ${{ steps.version_info.outputs.IS_PRERELEASE }}
