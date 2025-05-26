@@ -327,8 +327,7 @@ def open_fonts(jp_style: str, eng_style: str):
 def adjust_some_glyph(jp_font, eng_font, style="Regular"):
     """いくつかのグリフ形状に調整を加える"""
     eng_glyph_width = eng_font[0x0020].width
-    # full_width = jp_font[0x3042].width
-    full_width = jp_font[0x3000].width  # HACK: replace with Ideographic Space
+    full_width = jp_font[0x3042].width
     if options.get("35"):
         half_width = eng_glyph_width
     else:
@@ -674,11 +673,10 @@ def set_width_600_or_1000(jp_font):
             glyph.transform(psMat.translate((600 - glyph.width) / 2, 0))
             glyph.width = 600
 
-        # HACK: No need in Simplified Chinese
         # なぜか標準の幅ではないグリフの個別調整
-        # if glyph.unicode == 0x51F0:
-        #     glyph.transform(psMat.translate((1000 - glyph.width) / 2, 0))
-        #     glyph.width = 1000
+        if glyph.unicode == 0x51F0:
+            glyph.transform(psMat.translate((1000 - glyph.width) / 2, 0))
+            glyph.width = 1000
         if glyph.glyphname == "perthousand.full":
             glyph.width = 1000
 
