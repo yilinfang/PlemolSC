@@ -1,6 +1,6 @@
 # Release Notes
 
-## v0.0.2-alpha (26/05/2025)
+## v0.0.2 (26/05/2025)
 
 Built with:
 
