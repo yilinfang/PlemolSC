@@ -81,7 +81,7 @@ jobs:
             ${{ env.DOCKER_IMAGE_LOCAL_TAG }} \
             /app/build_all.sh
 
-      - name: Prepare Release Artifacts (Zipping individual variant folders flat)
+      - name: Prepare Release Artifacts
         id: prep_artifacts
         run: |
           ARTIFACT_STAGING_DIR="${{ github.workspace }}/release_zips_for_upload"
