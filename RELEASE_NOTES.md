@@ -11,7 +11,7 @@ Built with:
 
 ### Changes
 
-- Revert to using `Nerd Fonts v3.3.0`.
+- Revert to `Nerd Fonts v3.3.0`.
 
 ## v0.0.1 (25/05/2025)
 
